@@ -12,9 +12,9 @@ public class CPF {
 	private int digitoDois = 0;
 
 	public CPF() {
-		
+
 	}
-	
+
 	public void inserirCPF() {
 		System.out.println("Digite seu CPF(apenas números): ");
 		cpf = input.nextLine();
@@ -31,14 +31,35 @@ public class CPF {
 			i++;
 			j--;
 		}
-		
+
 		digitoUm = (soma % 11);
 		digitoUm = 11 - digitoUm;
-		
-		if(digitoUm > 9) {
+
+		if (digitoUm > 9) {
 			digitoUm = 0;
 		}
-		
+
 		cpfTeste = cpf.substring(0, 9) + digitoUm;
+	}
+
+	public void calculoDigitoDois() {
+
+		soma = 0;
+		int i = 0;
+		int j = 11;
+
+		while (i < 10) {
+			soma += (Integer.parseInt(cpf.charAt(i) + "") * j);
+			i++;
+			j--;
+		}
+		
+		digitoDois = (soma % 11);
+		digitoDois = (11 - digitoDois);
+		
+		if(digitoDois > 9) {
+			digitoDois = 0;
+		}
+		cpfTeste += digitoDois;
 	}
 }
