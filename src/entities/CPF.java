@@ -12,6 +12,10 @@ public class CPF {
 	private int digitoDois = 0;
 
 	public CPF() {
+		
+	}
+	
+	public void inserirCPF() {
 		System.out.println("Digite seu CPF(apenas números): ");
 		cpf = input.nextLine();
 	}
@@ -24,11 +28,17 @@ public class CPF {
 
 		while (i < 9) {
 			soma += (Integer.parseInt((cpf.charAt(i) + "")) * j);
-
 			i++;
 			j--;
 		}
-
+		
+		digitoUm = (soma % 11);
+		digitoUm = 11 - digitoUm;
+		
+		if(digitoUm > 9) {
+			digitoUm = 0;
+		}
+		
+		cpfTeste = cpf.substring(0, 9) + digitoUm;
 	}
-
 }
