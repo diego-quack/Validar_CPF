@@ -44,6 +44,7 @@ public class CPF {
 
 	public void calculoDigitoDois() {
 
+
 		soma = 0;
 		int i = 0;
 		int j = 11;
@@ -61,5 +62,15 @@ public class CPF {
 			digitoDois = 0;
 		}
 		cpfTeste += digitoDois;
+	}
+	
+	public void mostrarCPF() {
+		
+		if(cpf.equals(cpfTeste)) {
+			System.out.println("\nCPF: " + cpfTeste.substring(0, 9) + "-" + cpfTeste.substring(9, 11) + "Válido!");
+		}
+		else {
+			System.out.println("\nCPF: " + cpf.substring(0, 9) + "-" + cpf.substring(9, 11) + "Inválido!");
+		}
 	}
 }
