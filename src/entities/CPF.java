@@ -16,7 +16,7 @@ public class CPF {
 	}
 
 	public void inserirCPF() {
-		System.out.println("Digite seu CPF(apenas números): ");
+		System.out.print("Digite seu CPF(apenas números): ");
 		cpf = input.nextLine();
 	}
 
@@ -67,10 +67,10 @@ public class CPF {
 	public void mostrarCPF() {
 		
 		if(cpf.equals(cpfTeste)) {
-			System.out.println("\nCPF: " + cpfTeste.substring(0, 9) + "-" + cpfTeste.substring(9, 11) + "Válido!");
+			System.out.println("CPF: " + cpfTeste.substring(0, 9) + "-" + cpfTeste.substring(9, 11) + " - Válido!");
 		}
 		else {
-			System.out.println("\nCPF: " + cpf.substring(0, 9) + "-" + cpf.substring(9, 11) + "Inválido!");
+			System.out.println("CPF: " + cpf.substring(0, 9) + "-" + cpf.substring(9, 11) + " - Inválido!");
 		}
 	}
 }
